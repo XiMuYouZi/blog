@@ -1,0 +1,7 @@
+1、home页面的标签无效，无法通过点击标签来分类，把本来的标签的html的代码：
+<a class="post-category post-category-js" href="#">{{ post.category }}</a>
+换成下面
+ <a class="post-category post-category-js" href="{% url "search_tag" tag=post.category %}">
+发现报错
+
+2、搜索功能要同时实现标题和内容搜索，匹配之后显示title，但是匹配的title有重复的
